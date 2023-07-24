@@ -1,9 +1,17 @@
+import math
+
 class BigInt:
     def __init__(self, num_str="0"):
         self.digits = [int(digit) for digit in num_str]
 
     def __str__(self):
         return "".join(str(digit) for digit in self.digits)
+
+    def __float__(self):
+        return float(str(self))
+
+    def __int__(self):
+        return int(str(self))
 
     def __add__(self, other):
         return self.addition(self, other)
@@ -16,6 +24,16 @@ class BigInt:
 
     def __truediv__(self, other):
         return self.division(self, other)
+
+    def __pow__(self, other):
+        if not isinstance(other, int):
+            raise ValueError("Exponent must be an integer.")
+        return BigInt(str(int(self) ** other))
+
+    def root(self, n):
+        if not isinstance(n, int) or n <= 0:
+            raise ValueError("Root must be a positive integer.")
+        return BigInt(str(int(self) ** (1/n)))
 
     def addition(self, num1, num2):
         result = []
@@ -99,7 +117,7 @@ def main():
     try:
         num1 = input("Enter the first number: ")
         num2 = input("Enter the second number: ")
-        operator = input("Enter the operator (+, -, *, /): ")
+        operator = input("Enter the operator (+, -, *, /, ^, root): ")
 
         big_num1 = BigInt(num1)
         big_num2 = BigInt(num2)
@@ -115,6 +133,12 @@ def main():
             print("Quotient:", quotient)
             print("Remainder:", remainder)
             return
+        elif operator == '^':
+            exponent = int(input("Enter the exponent: "))
+            result = big_num1 ** exponent
+        elif operator == 'root':
+            root_val = int(input("Enter the root value: "))
+            result = big_num1.root(root_val)
         else:
             print("Invalid operator.")
             return
