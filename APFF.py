@@ -117,7 +117,8 @@ def main():
     try:
         num1 = input("Enter the first number: ")
         num2 = input("Enter the second number: ")
-        operator = input("Enter the operator (+, -, *, /, ^, root): ")
+        operator = input("Enter the operator (+, -, *, /, ^, root, to_celsius, to_fahrenheit, "
+                         "memory_store, memory_recall, memory_clear): ")
 
         big_num1 = BigInt(num1)
         big_num2 = BigInt(num2)
@@ -139,6 +140,20 @@ def main():
         elif operator == 'root':
             root_val = int(input("Enter the root value: "))
             result = big_num1.root(root_val)
+        elif operator == 'to_celsius':
+            result = big_num1.to_celsius()
+        elif operator == 'to_fahrenheit':
+            result = big_num1.to_fahrenheit()
+        elif operator == 'memory_store':
+            big_num1.memory_store()
+            print("Number stored in memory.")
+            return
+        elif operator == 'memory_recall':
+            result = big_num1.memory_recall()
+        elif operator == 'memory_clear':
+            big_num1.memory_clear()
+            print("Memory cleared.")
+            return
         else:
             print("Invalid operator.")
             return
