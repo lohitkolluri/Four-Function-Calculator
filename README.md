@@ -1,26 +1,20 @@
-# Arbitrary Precision Four-Function Calculator
+<h1 align="center" id="title">Arbitrary Precision Four Function Calculator</h1>
 
-The **Arbitrary Precision Four-Function Calculator** is a custom implementation capable of handling large integers with arbitrary precision. It allows performing basic arithmetic operations such as addition, subtraction, multiplication, and division on numbers of any size.
+<p id="description">The Arbitrary Precision Four-Function Calculator is a custom implementation capable of handling large integers with arbitrary precision. It allows performing basic arithmetic operations such as addition subtraction multiplication and division on numbers of any size.</p>
 
-## Features
+  
+  
+<h2>🧐 Features</h2>
 
-1. **Arbitrary Precision:** The calculator can handle large numbers with precision limited only by the available memory.
+Here're some of the project's best features:
 
-2. **Basic Arithmetic Operations:** The calculator supports the following arithmetic operations:
-   - Addition (`+`)
-   - Subtraction (`-`)
-   - Multiplication (`*`)
-   - Division (`/`)
+*   Arbitrary Precision
+*   Basic Arithmetic Operations
+*   Exponentiation and Nth Root
+*   Temperature Conversion
+*   Memory Functions
 
-3. **Exponentiation and Nth Root:** The calculator can raise a number to an integer exponent and calculate the nth root of a number.
-
-4. **Temperature Conversion:** It provides utility functions to convert a number to Celsius and Fahrenheit.
-
-5. **Memory Functions:** The calculator includes memory functions to store and recall numbers for future calculations.
-
-## Usage
-
-To use the **Arbitrary Precision Four-Function Calculator**, follow these steps:
+<h2>🛠️ Installation Steps:</h2>
 
 1. **Create BigInt Instances:**
    ```python
@@ -62,16 +56,6 @@ To use the **Arbitrary Precision Four-Function Calculator**, follow these steps:
    Enter the operator (+, -, *, /, ^, root, to_celsius, to_fahrenheit, memory_store, memory_recall, memory_clear): +
    Result: 111111111111111111100
    ```
+<h2>🛡️ License:</h2>
 
-## Important Notes
-
-1. The calculator can handle very large numbers with arbitrary precision, but extremely large calculations might take some time to complete.
-
-2. For division operations, the result will be returned as a tuple of two `BigInt` instances - quotient and remainder.
-
-3. The calculator only supports basic arithmetic operations and utility functions. Complex mathematical functions are not included.
-
-4. It can raise a `BigInt` number to an integer exponent, but fractional exponents are not supported.
-
-5. The calculator does not handle invalid input gracefully. Entering invalid numbers or operators may lead to unexpected results or errors.
-
+This project is licensed under the [MIT License](LICENSE)
